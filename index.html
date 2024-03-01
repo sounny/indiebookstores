@@ -57,15 +57,7 @@
           position: "bottom-right"
         });
 
-        const searchWidget = new Search({
-            view: view,
-            sources: [{
-                url: "https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer",
-                placeholder: "Find address or place",
-  }]
-});
-
-
+        
 // Create featurelayer from feature service 
 const layer = new FeatureLayer({ 
   // URL to the service 
