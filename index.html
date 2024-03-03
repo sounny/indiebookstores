@@ -57,12 +57,22 @@
           position: "bottom-right"
         });
 
-        
+ // Define a pop-up for usaeduLayer
+const popupBookstores = {
+  "title": "Indie Bookstores of the Midwest",
+  "content": "<b>Name:</b> {NAME}<br><b>Total Enrollment:</b> {TOT_ENROLL}<br>"
+}       
 // Create featurelayer from feature service 
 const indieBookstores = new FeatureLayer({
       url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/survey123_90bd253958b04c72984cdde506f14c81_results/FeatureServer"
       });
 
+      //adding the popup here
+outFields: ["NAME","TOT_ENROLL"],
+popupTemplate: popupEduusa
+ });
+ 
+ //add feature layer to map
       map.add(indieBookstores);
 
 
@@ -71,6 +81,7 @@ view.ui.add(searchWidget, {
         position: "top-left",
         index: 2
 });
+
 
          });
         </script>
