@@ -29,10 +29,11 @@
         "esri/config",
         "esri/widgets/Locate",
         "esri/widgets/Search",
-        "esri/layers/FeatureLayer"    
+        "esri/layers/FeatureLayer",
+        "esri/popup/content/AttachmentsContent"    
     ],
         
-        (Map, MapView, esriConfig, Locate, Search, FeatureLayer) => {
+        (Map, MapView, esriConfig, Locate, Search, FeatureLayer, AttachmentsContent) => {
 
         esriConfig.apiKey = "AAPK743426981581429cbb54c9d76b5e87221m_dimGOxaAXI1f9OThJm_cZ7jflHev4YxhlGpTn_Z-66wMY84jVXbPumN_6af-H";
 
@@ -60,7 +61,7 @@
  // Define a pop-up for usaeduLayer
 const popupBookstores = {
   "title": "Indie Bookstores of the Midwest",
-  "content": "<b>Name:</b> {NAME}<br><b>Total Enrollment:</b> {TOT_ENROLL}<br>"
+  "content": "<b>Store Name:</b> {store_name}<br><b>Store Location:</b> {store_location}<br><b>Website:</b> {store_website}<br>"
 }       
 // Create featurelayer from feature service 
 const indieBookstores = new FeatureLayer({
@@ -68,10 +69,10 @@ const indieBookstores = new FeatureLayer({
       });
 
       //adding the popup here
-outFields: ["NAME","TOT_ENROLL"],
-popupTemplate: popupEduusa
+outFields: ["store_name","store_location","store_website"],
+popupTemplate: popupBookstores
  });
- 
+
  //add feature layer to map
       map.add(indieBookstores);
 
