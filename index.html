@@ -59,12 +59,12 @@
 
         
 // Create featurelayer from feature service 
-const layer = new FeatureLayer({ 
-  // URL to the service 
-   url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/survey123_90bd253958b04c72984cdde506f14c81_results/FeatureServer"
-});
+const indieBookstores = new FeatureLayer({
+      url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/survey123_90bd253958b04c72984cdde506f14c81_results/FeatureServer"
+      });
 
-map.add(layer);
+      map.add(indieBookstores);
+
 
 // Add search widget to top left corner of the view
 view.ui.add(searchWidget, {
