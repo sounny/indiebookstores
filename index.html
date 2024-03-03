@@ -65,7 +65,7 @@ const popupBookstores = {
 }       
 // Create featurelayer from feature service 
 const indieBookstores = new FeatureLayer({
-      url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/survey123_90bd253958b04c72984cdde506f14c81_results/FeatureServer"
+      url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/survey123_90bd253958b04c72984cdde506f14c81_results/FeatureServer",
       //adding the popup here
       outFields: ["store_name","store_location","store_website"],
       popupTemplate: popupBookstores
