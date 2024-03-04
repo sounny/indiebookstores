@@ -65,10 +65,16 @@ const attachmentsElement = new AttachmentsContent({
 
 
  // Define a pop-up for usaeduLayer
-const popupBookstores = {
-    "title": "{store_name}",
-    "content":"{store_location}<br>{store_website}<br>", attachmentsElement
-}       
+ const popupBookstores = {
+  title: "{store_name}",
+  content: [
+    {
+      type: "text",
+      text: "{store_location}<br>{store_website}<br>"
+    },
+    attachmentsElement
+  ]
+};  
 
 
 // Create featurelayer from feature service 
