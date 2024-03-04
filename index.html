@@ -100,9 +100,10 @@ const indieBookstores = new FeatureLayer({
       renderer: {  // Add this
     type: "simple",  // autocasts as new SimpleRenderer()
     symbol: {  // autocasts as new SimpleMarkerSymbol()
-      type: "simple-marker",
+      type: "circle",
       size: 6,
-      color: "red",
+      color: "#bad2cf",
+      opacity: 50,
       outline: {  // autocasts as new SimpleLineSymbol()
         width: 0.5,
         color: "white"
