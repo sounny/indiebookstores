@@ -43,10 +43,11 @@
         "esri/widgets/Search",
         "esri/layers/FeatureLayer",
         "esri/popup/content/AttachmentsContent",
-        "esri/widgets/Directions"  
+        "esri/widgets/Directions",
+        "esri/symbols/SimpleMarkerSymbol"
     ],
         
-        (Map, MapView, esriConfig, Locate, Search, FeatureLayer, AttachmentsContent, Directions) => {
+        (Map, MapView, esriConfig, Locate, Search, FeatureLayer, AttachmentsContent, Directions, simpleMarkerSymbol) => {
 
         esriConfig.apiKey = "AAPK743426981581429cbb54c9d76b5e87221m_dimGOxaAXI1f9OThJm_cZ7jflHev4YxhlGpTn_Z-66wMY84jVXbPumN_6af-H";
 
@@ -95,7 +96,19 @@ const indieBookstores = new FeatureLayer({
       url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/survey123_90bd253958b04c72984cdde506f14c81_results/FeatureServer",
       //adding the popup here
       outFields: ["store_name","store_location","store_website"],
-      popupTemplate: popupBookstores
+      popupTemplate: popupBookstores,
+      renderer: {  // Add this
+    type: "simple",  // autocasts as new SimpleRenderer()
+    symbol: {  // autocasts as new SimpleMarkerSymbol()
+      type: "simple-marker",
+      size: 6,
+      color: "red",
+      outline: {  // autocasts as new SimpleLineSymbol()
+        width: 0.5,
+        color: "white"
+      }
+    }
+  }
 
  });
 
