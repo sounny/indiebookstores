@@ -10,6 +10,30 @@
    <style>
     html,
     body,
+    #heading {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #0098db;
+    }
+
+    .header {
+      text-align: left;
+      background: #1abc9c;
+      color: rgb(255, 255, 255);
+      height: 44px;
+      display: flex;
+      align-items: center;
+      font-weight: bolder;
+      font-size: 24pt;
+    }
+
+    .header img {
+      height: 40px;
+      margin: 0 8px 0 8px;
+    }
+
     #viewDiv {
      padding: 0;
      margin: 0;
@@ -30,10 +54,11 @@
         "esri/widgets/Locate",
         "esri/widgets/Search",
         "esri/layers/FeatureLayer",
-        "esri/popup/content/AttachmentsContent"    
+        "esri/popup/content/AttachmentsContent",
+        "esri/widgets/Directions"  
     ],
         
-        (Map, MapView, esriConfig, Locate, Search, FeatureLayer, AttachmentsContent) => {
+        (Map, MapView, esriConfig, Locate, Search, FeatureLayer, AttachmentsContent, Directions) => {
 
         esriConfig.apiKey = "AAPK743426981581429cbb54c9d76b5e87221m_dimGOxaAXI1f9OThJm_cZ7jflHev4YxhlGpTn_Z-66wMY84jVXbPumN_6af-H";
 
@@ -48,7 +73,7 @@
             center: [-93.490569, 43.143562] // Longitude, latitude
 
             });
-
+        
         const locateBtn = new Locate({
                     view: view
         });
@@ -88,7 +113,6 @@ const indieBookstores = new FeatureLayer({
 
  //add feature layer to map
       map.add(indieBookstores);
-
 
 
 // Add search widget to top left corner of the view
