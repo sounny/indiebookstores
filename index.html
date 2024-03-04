@@ -58,11 +58,19 @@
           position: "bottom-right"
         });
 
+        
+const attachmentsElement = new AttachmentsContent({
+  displayType: "list" // this will show all attachments as a list of linked files
+});
+
+
  // Define a pop-up for usaeduLayer
 const popupBookstores = {
     "title": "{store_name}",
-    "content":"{store_location}<br>{store_website}<br>"
+    "content":"{store_location}<br>{store_website}<br>[attachmentselement]"
 }       
+
+
 // Create featurelayer from feature service 
 const indieBookstores = new FeatureLayer({
       url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/survey123_90bd253958b04c72984cdde506f14c81_results/FeatureServer",
