@@ -88,10 +88,11 @@
         "esri/widgets/Directions",
         "esri/symbols/SimpleMarkerSymbol",
         "esri/widgets/Editor",
-        "esri/widgets/Expand"
+        "esri/widgets/Expand",
+        "esri/widgets/Legend"
     ],
         
-        (Map, MapView, esriConfig, Locate, Search, FeatureLayer, AttachmentsContent, Directions, simpleMarkerSymbol, Editor, Expand) => {
+        (Map, MapView, esriConfig, Locate, Search, FeatureLayer, AttachmentsContent, Directions, simpleMarkerSymbol, Editor, Expand, Legend) => {
 
         esriConfig.apiKey = "AAPK743426981581429cbb54c9d76b5e87221m_dimGOxaAXI1f9OThJm_cZ7jflHev4YxhlGpTn_Z-66wMY84jVXbPumN_6af-H";
 
@@ -226,6 +227,12 @@ const editorExpand = new Expand({
 });
 
 view.ui.add(editorExpand, "top-right");
+
+const legend = new Legend({
+  view: view
+});
+
+view.ui.add(legend, "bottom-right");
       
         });
 
