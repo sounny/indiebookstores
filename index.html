@@ -107,7 +107,9 @@
             center: [-93.490569, 42] // Longitude, latitude
 
             });
-        
+          
+          view.ui.move("zoom", "top-right");
+
             
         const searchWidget = new Search({
          view: view,
@@ -117,7 +119,7 @@
          view.ui.add(searchWidget, {
           position: "top-left"
          });
-         
+
         const locateBtn = new Locate({
                     view: view
         });
