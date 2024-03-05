@@ -126,15 +126,7 @@ const indieBookstores = new FeatureLayer({
  //add feature layer to map
       map.add(indieBookstores);
 
-      const surveyResultsLayer = new FeatureLayer({ 
-  // URL to the service 
-   url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/survey123_563fd6084c844dba84c80d9b3491c1f0/FeatureServer"
-});
-
-map.add(surveyResultsLayer);
-
-
-
+      
  // Define a pop-up for usaeduLayer
  const popupSurveyResults = {
   title: "Bookstore Survey Results",
@@ -146,6 +138,31 @@ map.add(surveyResultsLayer);
     attachmentsElement
   ]
 };  
+
+  const surveyResultsLayer = new FeatureLayer({ 
+  // URL to the service 
+   url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/survey123_563fd6084c844dba84c80d9b3491c1f0/FeatureServer",
+   outFields: ["how_was_your_experience_at_this","when_did_you_visit","feel_free_to_elaborate_on_the_i"],
+      popupTemplate: popupSurveyResults,
+      renderer: {  // Add this
+    type: "simple",  // autocasts as new SimpleRenderer()
+    symbol: {  // autocasts as new SimpleMarkerSymbol()
+      type: "simple-marker",
+      shape: "circle",
+      size: 7,
+      color: [186, 210, 207, 1],
+      outline: {  // autocasts as new SimpleLineSymbol()
+        width: 1,
+        color: "darkgray"
+      }
+    }
+  }
+  });
+
+map.add(surveyResultsLayer);
+
+
+
 
 
       
