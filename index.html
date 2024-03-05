@@ -214,19 +214,14 @@ const editor = new Editor({
  view: view,
  snappingOptions: { // autocasts to SnappingOptions()
     enabled: true},
+  visibleElements: {
+    layerList: false
+  },
  layerInfos: [pointInfos]
  }); // End Editor constructor
 
 // Add the widget to the view
 view.ui.add(editor, "top-right");
-
-editor.visibleElements = {
-      layerList: false
-  }
-}
-
-
-
       
         });
 
