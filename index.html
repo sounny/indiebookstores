@@ -212,6 +212,8 @@ const pointInfos = {
 // Begin Editor constructor
 const editor = new Editor({
  view: view,
+ snappingOptions: { // autocasts to SnappingOptions()
+    enabled: true},
  layerInfos: [pointInfos]
  }); // End Editor constructor
 
