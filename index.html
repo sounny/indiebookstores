@@ -232,7 +232,13 @@ const legend = new Legend({
   view: view
 });
 
-view.ui.add(legend, "top-left");
+const legendExpand = new Expand({
+  expandIcon: "legend", 
+  view: view,
+  content: editor
+});
+
+view.ui.add(legendExpand, "top-right");
       
         });
 
