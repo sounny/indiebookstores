@@ -108,6 +108,16 @@
 
             });
         
+            
+        const searchWidget = new Search({
+         view: view,
+         placeholder: "Search for a bookstore"
+         });
+
+         view.ui.add(searchWidget, {
+          position: "top-left"
+         });
+         
         const locateBtn = new Locate({
                     view: view
         });
@@ -117,14 +127,6 @@
           position: "top-left"
         });
 
-        const searchWidget = new Search({
-         view: view,
-         placeholder: "Search for a bookstore"
-         });
-
-         view.ui.add(searchWidget, {
-          position: "top-left"
-         });
 
         
 const attachmentsElement = new AttachmentsContent({
