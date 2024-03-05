@@ -86,10 +86,11 @@
         "esri/layers/FeatureLayer",
         "esri/popup/content/AttachmentsContent",
         "esri/widgets/Directions",
-        "esri/symbols/SimpleMarkerSymbol"
+        "esri/symbols/SimpleMarkerSymbol",
+        "esri/widgets/Editor",
     ],
         
-        (Map, MapView, esriConfig, Locate, Search, FeatureLayer, AttachmentsContent, Directions, simpleMarkerSymbol) => {
+        (Map, MapView, esriConfig, Locate, Search, FeatureLayer, AttachmentsContent, Directions, simpleMarkerSymbol, Editor) => {
 
         esriConfig.apiKey = "AAPK743426981581429cbb54c9d76b5e87221m_dimGOxaAXI1f9OThJm_cZ7jflHev4YxhlGpTn_Z-66wMY84jVXbPumN_6af-H";
 
@@ -166,6 +167,7 @@ const indieBookstores = new FeatureLayer({
 
  //add feature layer to map
       map.add(indieBookstores);
+      
 
       
  // Define a pop-up for usaeduLayer
@@ -202,7 +204,19 @@ const indieBookstores = new FeatureLayer({
 
 map.add(surveyResultsLayer);
 
+// Set the point layer's LayerInfo
+const pointInfos = {
+ layer: surveyResultsLayer
+}
 
+// Begin Editor constructor
+const editor = new Editor({
+ view: view,
+ layerInfos: [pointInfos]
+ }); // End Editor constructor
+
+// Add the widget to the view
+view.ui.add(editor, "top-right");
 
 
 
