@@ -133,6 +133,21 @@ const indieBookstores = new FeatureLayer({
 
 map.add(surveyResultsLayer);
 
+
+
+ // Define a pop-up for usaeduLayer
+ const popupSurveyResults = {
+  title: "Bookstore Survey Results",
+  content: [
+    {
+      type: "text",
+      text: "{how_was_your_experience_at_this}<br>{when_did_you_visit}<br>{feel_free_to_elaborate_on_the_i}"
+    },
+    attachmentsElement
+  ]
+};  
+
+
       
         });
 
