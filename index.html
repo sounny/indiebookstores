@@ -88,9 +88,10 @@
         "esri/widgets/Directions",
         "esri/symbols/SimpleMarkerSymbol",
         "esri/widgets/Editor",
+        "esri/widgets/Expand"
     ],
         
-        (Map, MapView, esriConfig, Locate, Search, FeatureLayer, AttachmentsContent, Directions, simpleMarkerSymbol, Editor) => {
+        (Map, MapView, esriConfig, Locate, Search, FeatureLayer, AttachmentsContent, Directions, simpleMarkerSymbol, Editor, Expand) => {
 
         esriConfig.apiKey = "AAPK743426981581429cbb54c9d76b5e87221m_dimGOxaAXI1f9OThJm_cZ7jflHev4YxhlGpTn_Z-66wMY84jVXbPumN_6af-H";
 
@@ -219,6 +220,14 @@ const editor = new Editor({
 
 // Add the widget to the view
 view.ui.add(editor, "top-right");
+
+const editorExpand = new Expand({
+  expandIcon: "pencils", 
+  view: view,
+  content: editor
+});
+
+view.ui.add(editorExpand, "top-right");
       
         });
 
