@@ -168,6 +168,9 @@ const indieBookstores = new FeatureLayer({
 
  });
 
+ //change name of the book store layer to "Book Stores" as seen in the layer list
+ indieBookstores.title = "Book Stores";
+
  //add feature layer to map
       map.add(indieBookstores);
             
@@ -203,6 +206,9 @@ const indieBookstores = new FeatureLayer({
     }
   }
   });
+
+  //changes name of the survey layer to "User Reviews" as seen in the layer list       
+  surveyResultslayer.title = "User Reviews";
 
 map.add(surveyResultsLayer); //Add surveyResultsLayer to map
 
@@ -255,7 +261,10 @@ view.ui.add(legendExpand, "top-left");
       
          </header> 
 
+ // Add expand widget for the legend to the top left corner of the view
   <a href="https://arcg.is/Dna5C"target="_blank" class="addRecordBtn">Review a bookstore & add to the map!</a>
+
+   //adds button linking to the Midwest Book Sellers site
   <a href="https://www.midwestbooksellers.org/C"target="_blank" class="addRecordBtn2">Midwest Independent Booksellers Association</a>   
 
    <div id="viewDiv"></div>
