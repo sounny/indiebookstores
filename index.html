@@ -93,7 +93,7 @@
         // Add all parameters of require statements
         (Map, MapView, esriConfig, Locate, Search, FeatureLayer, AttachmentsContent, Directions, simpleMarkerSymbol, Editor, Expand, Legend) => {
         // Add API key
-        esriConfig.apiKey = "AAPK743426981581429cbb54c9d76b5e87221m_dimGOxaAXI1f9OThJm_cZ7jflHev4YxhlGpTn_Z-66wMY84jVXbPumN_6af-H";
+        esriConfig.apiKey = "AAPKc722771c0ccc42f6b3a50f98f0541437noDYBlU0Z8XIJioQe0FCEDxsHh9fAgIj7WZTgQnwd8Iro4vn-CgJSPt4wG7YeNvj";
         
         // Create a map
         const map = new Map({
@@ -118,7 +118,7 @@
          });
 
          view.ui.add(searchWidget, { // Add search widget to top left corner
-          position: "top-left"
+           position: "top-left"
          });
 
         const locateBtn = new Locate({ // Add locate widget
@@ -168,6 +168,9 @@ const indieBookstores = new FeatureLayer({
 
  });
 
+ //change name of the book store layer to "Book Stores" as seen in the layer list
+ indieBookstores.title = "Book Stores";
+
  //add feature layer to map
       map.add(indieBookstores);
             
@@ -203,6 +206,9 @@ const indieBookstores = new FeatureLayer({
     }
   }
   });
+
+  //changes name of the survey layer to "User Reviews" as seen in the layer list       
+  surveyResultsLayer.title = "User Reviews";
 
 map.add(surveyResultsLayer); //Add surveyResultsLayer to map
 
@@ -255,7 +261,10 @@ view.ui.add(legendExpand, "top-left");
       
          </header> 
 
+  <!--Add expand widget for the legend to the top left corner of the view-->
   <a href="https://arcg.is/Dna5C"target="_blank" class="addRecordBtn">Review a bookstore & add to the map!</a>
+
+   <!--adds button linking to the Midwest Book Sellers site-->
   <a href="https://www.midwestbooksellers.org/C"target="_blank" class="addRecordBtn2">Midwest Independent Booksellers Association</a>   
 
    <div id="viewDiv"></div>
