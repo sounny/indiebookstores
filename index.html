@@ -88,16 +88,20 @@
         "esri/symbols/SimpleMarkerSymbol",
         "esri/widgets/Editor",
         "esri/widgets/Expand",
-        "esri/widgets/Legend"
+        "esri/widgets/Legend",
+        "esri/tasks/RouteTask",
+        "esri/tasks/support/RouteParameters",
+        "esri/tasks/support/FeatureSet"
     ],
         // Add all parameters of require statements
-        (Map, MapView, esriConfig, Locate, Search, FeatureLayer, AttachmentsContent, Directions, simpleMarkerSymbol, Editor, Expand, Legend) => {
+        (Map, MapView, esriConfig, Locate, Search, FeatureLayer, AttachmentsContent, Directions, simpleMarkerSymbol, Editor, Expand, Legend, RouteTask, RouteParameters, FeatureSet) => {
         // Add API key
         esriConfig.apiKey = "AAPKc722771c0ccc42f6b3a50f98f0541437noDYBlU0Z8XIJioQe0FCEDxsHh9fAgIj7WZTgQnwd8Iro4vn-CgJSPt4wG7YeNvj";
         
         // Create a map
         const map = new Map({
-            basemap: "arcgis-light-gray" 
+            basemap: "arcgis-light-gray",
+            layers: [routeLayer] //add for route visualization
             });
         
         // Create a MapView
@@ -247,9 +251,19 @@ const legendExpand = new Expand({
   content: legend
 });
 
+
+// create a new empty RouteLayer
+const routeLayer = new RouteLayer();
+
 // Create a Directions widget
 const DirectionsWidget = new Directions({
   view: view,
+  layer: routeLayer
+});
+
+// adds the Directions widget to the
+// top right corner of the view
+view.ui.add(directionsWidget, {
   position: "top-right"
 });
 
