@@ -84,15 +84,13 @@
         "esri/widgets/Search",
         "esri/layers/FeatureLayer",
         "esri/popup/content/AttachmentsContent",
-        "esri/widgets/Directions",
-        "esri/symbols/SimpleMarkerSymbol",
+         "esri/symbols/SimpleMarkerSymbol",
         "esri/widgets/Editor",
         "esri/widgets/Expand",
         "esri/widgets/Legend",
-        "esri/tasks/Route"
-            ],
+                    ],
         // Add all parameters of require statements
-        (Map, MapView, esriConfig, Locate, Search, FeatureLayer, AttachmentsContent, Directions, simpleMarkerSymbol, Editor, Expand, Legend, Route) => {
+        (Map, MapView, esriConfig, Locate, Search, FeatureLayer, AttachmentsContent, Directions, simpleMarkerSymbol, Editor, Expand, Legend) => {
         // Add API key
         esriConfig.apiKey = "AAPKc722771c0ccc42f6b3a50f98f0541437noDYBlU0Z8XIJioQe0FCEDxsHh9fAgIj7WZTgQnwd8Iro4vn-CgJSPt4wG7YeNvj";
         
@@ -252,17 +250,7 @@ const legendExpand = new Expand({
   content: legend
 });
 
-// Create a Directions widget
-const DirectionsWidget = new Directions({
-  view: view,
-  layer: Route
-});
 
-// adds the Directions widget to the
-// top right corner of the view
-view.ui.add(directionsWidget, {
-  position: "top-right"
-});
 
 // Add expand widget for the legend to the top left corner of the view
 view.ui.add(legendExpand, "top-left");
