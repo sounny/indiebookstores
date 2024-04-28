@@ -89,10 +89,10 @@
         "esri/widgets/Editor",
         "esri/widgets/Expand",
         "esri/widgets/Legend",
-        "esri/tasks/RouteLayer"
+        "esri/tasks/RouteTask"
             ],
         // Add all parameters of require statements
-        (Map, MapView, esriConfig, Locate, Search, FeatureLayer, AttachmentsContent, Directions, simpleMarkerSymbol, Editor, Expand, Legend, RouteLayer) => {
+        (Map, MapView, esriConfig, Locate, Search, FeatureLayer, AttachmentsContent, Directions, simpleMarkerSymbol, Editor, Expand, Legend, RouteTask) => {
         // Add API key
         esriConfig.apiKey = "AAPKc722771c0ccc42f6b3a50f98f0541437noDYBlU0Z8XIJioQe0FCEDxsHh9fAgIj7WZTgQnwd8Iro4vn-CgJSPt4wG7YeNvj";
         
@@ -255,7 +255,7 @@ const legendExpand = new Expand({
 // Create a Directions widget
 const DirectionsWidget = new Directions({
   view: view,
-  layer: routeLayer
+  layer: routeTask
 });
 
 // adds the Directions widget to the
