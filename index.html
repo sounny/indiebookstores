@@ -98,6 +98,9 @@
         // Add API key
         esriConfig.apiKey = "AAPKc722771c0ccc42f6b3a50f98f0541437noDYBlU0Z8XIJioQe0FCEDxsHh9fAgIj7WZTgQnwd8Iro4vn-CgJSPt4wG7YeNvj";
         
+        // create a new empty RouteLayer
+        const routeLayer = new RouteLayer();
+
         // Create a map
         const map = new Map({
             basemap: "arcgis-light-gray",
@@ -250,10 +253,6 @@ const legendExpand = new Expand({
   view: view,
   content: legend
 });
-
-
-// create a new empty RouteLayer
-const routeLayer = new RouteLayer();
 
 // Create a Directions widget
 const DirectionsWidget = new Directions({
