@@ -258,17 +258,15 @@ view.ui.add(legendExpand, "top-left");
       
 // new RouteLayer must be added to Directions widget
 const directionsWidget = new Directions({
-  view: view,
-  layer: routeLayer
+  layer: routeLayer,
+  apiKey: "AAPK9bfb405438ae474fbe125816fbb635885Ev1u6Q5RSFaw-0KyQks_dfsDxww5d-TULdrRCUhzDS1Q42GErsuR85W9G1hAAT3"
 });
 
-// adds the Directions widget to the
-// top right corner of the view
+// adds the Directions widget to the top right corner of the view
 view.ui.add(directionsWidget, {
   position: "top-right"
 });
-        });
-
+      
         </script>
 
   </head>
