@@ -92,7 +92,7 @@
         "esri/layers/RouteLayer"
                     ],
         // Add all parameters of require statements
-        (Map, MapView, esriConfig, Locate, Search, FeatureLayer, AttachmentsContent, simpleMarkerSymbol, Editor, Expand, Legend, Directions, RouteLayer => {
+        (Map, MapView, esriConfig, Locate, Search, FeatureLayer, AttachmentsContent, simpleMarkerSymbol, Editor, Expand, Legend, Directions, RouteLayer) => {
         // Add API key
         esriConfig.apiKey = "AAPKc722771c0ccc42f6b3a50f98f0541437noDYBlU0Z8XIJioQe0FCEDxsHh9fAgIj7WZTgQnwd8Iro4vn-CgJSPt4wG7YeNvj";
         
@@ -266,8 +266,8 @@ const directionsWidget = new Directions({
 view.ui.add(directionsWidget, {
   position: "top-right"
 });
-      })
-      
+        });
+
         </script>
 
   </head>
