@@ -84,7 +84,7 @@
         "esri/widgets/Search",
         "esri/layers/FeatureLayer",
         "esri/popup/content/AttachmentsContent",
-         "esri/symbols/SimpleMarkerSymbol",
+        "esri/symbols/SimpleMarkerSymbol",
         "esri/widgets/Editor",
         "esri/widgets/Expand",
         "esri/widgets/Legend",
@@ -92,9 +92,14 @@
         "esri/layers/RouteLayer"
                     ],
         // Add all parameters of require statements
-        (Map, MapView, esriConfig, Locate, Search, FeatureLayer, AttachmentsContent, simpleMarkerSymbol, Editor, Expand, Legend, Directions, RouteLayer) => {
-        // Add API key
+        (Map, MapView, esriConfig, Locate, Search, FeatureLayer, AttachmentsContent, SimpleMarkerSymbol, Editor, Expand, Legend, Directions, RouteLayer) => {
+        
+        //fixed SimpleMarkerSymbol error, s was not captalized
+        
+          // Add API key
         esriConfig.apiKey = "AAPK9010d0b61469421388268a0a3d6b9970behQAuDdJqQ1pqWiFduaupUbAQXKrMzBGDNlYvnzFhJVmo4o4_JV_Y0cDx9Umj8M";
+
+        //testing with my key to rule out API errors
         
           // create a new empty RouteLayer
         const routeLayer = new RouteLayer();
@@ -258,8 +263,8 @@ view.ui.add(legendExpand, "top-left");
       
 // new RouteLayer must be added to Directions widget
 const directionsWidget = new Directions({
-  layer: routeLayer,
-  apiKey: "AAPK9bfb405438ae474fbe125816fbb635885Ev1u6Q5RSFaw-0KyQks_dfsDxww5d-TULdrRCUhzDS1Q42GErsuR85W9G1hAAT3"
+  layer: routeLayer
+  //apiKey: "AAPK9bfb405438ae474fbe125816fbb635885Ev1u6Q5RSFaw-0KyQks_dfsDxww5d-TULdrRCUhzDS1Q42GErsuR85W9G1hAAT3"
 });
 
 // adds the Directions widget to the top right corner of the view
